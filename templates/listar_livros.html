@@ -1,0 +1,72 @@
+{% extends 'base.html' %} {% block conteudo %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de livros</title>
+</head>
+
+<body>
+    <h1>LISTA DE LIVROS</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="input-group">
+            <input type="search" name="pesquisa" class="form-control rounded" id="text" placeholder="pesquisar" aria-label="Search" aria-describedby="search-addon" />
+            <button type="submit" class="btn btn-outline-primary">Pesquisar</button>
+        </div>
+    </form>
+    <div class="card">
+        <div class="card-header">
+        </div>
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                <p>O saber a gente aprende com os mestres e os livros. A sabedoria se aprende é com a vida e com os humildes.</p>
+                <footer class="blockquote-footer">Cora Caroline em <cite title="Source Title">O pensador</cite></footer>
+            </blockquote>
+        </div>
+    </div>
+
+    {{% if messages %}}
+    <div class="alert alert-danger" role="alert">
+        Livro não encontrado!
+    </div>
+    {{% endif %}}
+
+    <tbody>
+        {%for dicionario in req%}
+        <div class="shadow-lg p-3 mb-2 bg-body rounded"></div>
+        <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{{dicionario.image}}" alt="Minha Figura" width="250px" height="250px">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            {{dicionario.title}}
+                        </h5>
+                        <p class="card-text">Estado do livro:{{dicionario.state}}</p>
+                        <p class="card-text">Nº de pagínas:{{dicionario.pages}}</p>
+                        <p class="card-text">Autor:{{dicionario.author}}</p>
+                        <p class="card-text">Editora:{{dicionario.publishing}}</p>
+                        <p class="card-text"><small class="text-muted">Data de publicação:{{dicionario.release_year}}</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {%endfor%}
+
+    </tbody>
+    </table>
+    <header>
+
+    </header>
+
+</body>
+
+</html>
+{% endblock %}
