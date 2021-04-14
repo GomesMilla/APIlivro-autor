@@ -29,11 +29,6 @@
         </div>
     </div>
 
-    {{% if messages %}}
-    <div class="alert alert-danger" role="alert">
-        Livro não encontrado!
-    </div>
-    {{% endif %}}
 
     <tbody>
         {%for dicionario in req%}
@@ -50,7 +45,7 @@
                         </h5>
                         <p class="card-text">Estado do livro:{{dicionario.state}}</p>
                         <p class="card-text">Nº de pagínas:{{dicionario.pages}}</p>
-                        <p class="card-text">Autor:{{dicionario.author}}</p>
+                        <p class="card-text">ID do Autor:{{dicionario.author}}</p>
                         <p class="card-text">Editora:{{dicionario.publishing}}</p>
                         <p class="card-text"><small class="text-muted">Data de publicação:{{dicionario.release_year}}</small></p>
                     </div>

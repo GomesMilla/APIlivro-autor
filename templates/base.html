@@ -40,7 +40,15 @@
     </nav>
     <!-- TODO O CONTEÚDO DE UM TEMPLATE DEVE SER EXIBIDO DENTRO DESSE BLOCK CONTEÚDO E O FINAL DELE. -->
     <main>
-        {% block conteudo %} {% endblock conteudo %}
+        {% if messages %}
+        <div class="alert alert-danger" role="alert">
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+
+        </div>
+
+        {% endif %} {% block conteudo %} {% endblock conteudo %}
     </main>
 
     <!-- FINAL DO TEMPLATE, É AQUI QUE FINALIZA A PARTE DO TEMPLATE QUE CRIEI, COLOCANDO ENTRE ELES O CÓDIGO DESCRITO  -->

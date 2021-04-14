@@ -15,6 +15,10 @@ class BooksViewSet(viewsets.ModelViewSet):
         title = self.request.query_params.get('title')
         if title is not None:
             queryset = queryset.filter(title__contains=title)
+
+        author = self.request.query_params.get('author')
+        if author is not None:
+            queryset = queryset.filter(author=author)
         return queryset
     
 

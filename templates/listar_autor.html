@@ -19,24 +19,27 @@
         </div>
     </form>
 
+
     <tbody>
         {%for dicionario in req%}
         <div class="shadow-lg p-3 mb-2 bg-body rounded"></div>
         <div class="card mb-3">
             <div class="row g-0">
                 <div class="col-md-4">
-                    <img src="{{dicionario.image}}" alt="Minha Figura" width="350px" height="400px">
+                    <img src="{{dicionario.info.image}}" alt="Minha Figura" width="350px" height="400px">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
                         <h5 class="card-title">
-                            {{dicionario.name}}
+                            {{dicionario.info.name}}
                         </h5>
-                        <p class="card-text">Tipo de escrita:{{dicionario.genero}}</p>
-                        <p class="card-text">Cidade de nascimento:{{dicionario.city}}</p>
-                        <p class="card-text">Data de nascimento:{{dicionario.birthday}}</p>
-                        <p class="card-text">Onde mora:{{dicionario.lives}}</p>
-                        <p class="card-text">Sobre:{{dicionario.about}}</p>
+                        <p class="card-text">Tipo de escrita:{{dicionario.info.genero}}</p>
+                        <p class="card-text">Cidade de nascimento:{{dicionario.info.city}}</p>
+                        <p class="card-text">Data de nascimento:{{dicionario.info.birthday}}</p>
+                        <p class="card-text">Livros: {% for obj in dicionario.livros %} <small>{{obj.title}}</small><br> {% endfor %}
+                        </p>
+                        <p class="card-text">Onde mora:{{dicionario.info.lives}}</p>
+                        <p class="card-text">Sobre:{{dicionario.info.about}}</p>
 
                     </div>
                 </div>

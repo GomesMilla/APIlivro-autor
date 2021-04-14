@@ -39,9 +39,16 @@ def list_author(request):
     req = requests.get('http://localhost:8000/author/?format=json')
     dicionario = json.loads(req.text)
     
-    # req = None
-    # dicionario = None
     
+    listAutores = []
+    for q in dicionario:
+        livros =  requests.get('http://localhost:8000/books/?author='+str(q['id']))
+        livros = json.loads(livros.text)
+        obj = {
+            'info':q,
+            'livros':livros,
+        }
+        listAutores.append(obj)
     
     if request.POST:
         pesquisa = request.POST.get("pesquisa", None)
@@ -53,11 +60,13 @@ def list_author(request):
             req = requests.get('http://localhost:8000/author/?format=json')
             dicionario = json.loads(req.text) 
 
-
+            messages.error(request,"Autor não encontrado!")
 
     context = {
-        "req" : dicionario
+        "req" : listAutores
     }
 
 
     return render(request,"listar_autor.html",context)
+
+

@@ -12,7 +12,7 @@ class Author(models.Model):
     birthday = models.DateField("Data de nascimento:", blank=False, null=False)
     genero = models.CharField("Genero da escrita:", max_length=20, blank=False, null=False)
     city = models.CharField("Cidade de nascimento:", max_length=90, blank=False, null=False)
-    about = models.TextField("Sobre o autor:", max_length=100, blank= False, null=False)
+    about = models.TextField("Sobre o autor:", max_length=500, blank= False, null=False)
     lives = models.CharField("Cidade onde vive:", max_length=60, blank=False, null=False)
     image = models.ImageField(upload_to=upload_image_author,blank=True, null=True)
 
