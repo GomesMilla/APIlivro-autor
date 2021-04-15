@@ -63,7 +63,8 @@ def list_author(request):
             messages.error(request,"Autor não encontrado!")
 
     context = {
-        "req" : listAutores
+        "req" : listAutores,
+        
     }
 
 

@@ -1,0 +1,77 @@
+* {
+    margin: 0%;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+.nav {
+    background-color: rgb(2, 2, 2);
+    max-height: 50%;
+    height: 50%;
+    margin-bottom: 5000px;
+    margin-top: 0.5px;
+}
+
+body {
+    background: linear-gradient(45deg, #363635, rgb(172, 167, 167), #757474);
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav a {
+    color: rgb(250, 251, 252);
+}
+
+.titulo {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    position: relative;
+    left: 35%;
+    font-size: 500%;
+    color: black;
+}
+
+.title {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    position: relative;
+    left: 36%;
+    font-size: 500%;
+    color: black;
+}
+
+footer {
+    background-color: rgb(253, 251, 251);
+}
+
+.container {
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 8px;
+    background-color: rgb(252, 252, 252);
+    color: rgb(3, 5, 5);
+    max-width: 1px;
+    min-height: 1px;
+    padding: 1rem;
+    box-shadow: 5px 5px 5px, rgb(0, 14, 17)
+}
+
+
+/* .button {
+    color: black;
+    background-color: pink;
+}
+
+.input-group .btn {
+    background-color: rgb(0, 0, 0);
+    color: rgb(252, 249, 249);
+} */
+
+
+/* .input-group.form-control {
+    background-color: rgb(0, 0, 0);
+    color: rgb(109, 46, 46);
+    width: 10px;
+    height: 5px;
+    width: 50%;
+} */
